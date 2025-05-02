@@ -1,0 +1,23 @@
+import heapq
+
+goal = [[1,2,3],[4,5,6],[7,8,0]]
+def manhattan(p, g): return sum(abs(px - gx) + abs(py - gy) for px, row in enumerate(p) for py, val in enumerate(row) if val and [(gx, gy) for gx, gr in enumerate(g) for gy, gv in enumerate(gr) if gv == val][0])
+
+def astar(start):
+    pq = [(manhattan(start, goal), 0, start, [])]
+    seen = set()
+    while pq:
+        _, cost, state, path = heapq.heappop(pq)
+        if state == goal: return path + [state]
+        seen.add(str(state))
+        zero = [(ix, iy) for ix, row in enumerate(state) for iy, i in enumerate(row) if i == 0][0]
+        for dx, dy in [(-1,0),(1,0),(0,-1),(0,1)]:
+            x, y = zero[0] + dx, zero[1] + dy
+            if 0 <= x < 3 and 0 <= y < 3:
+                new = [r[:] for r in state]
+                new[zero[0]][zero[1]], new[x][y] = new[x][y], new[zero[0]][zero[1]]
+                if str(new) not in seen:
+                    heapq.heappush(pq, (cost+1+manhattan(new, goal), cost+1, new, path+[state]))
+
+start = [[1,2,3],[4,0,6],[7,5,8]]
+for step in astar(start): print(step)
