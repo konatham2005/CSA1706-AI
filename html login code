@@ -53,3 +53,131 @@
   
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+php code
+
+<?php
+// Simple CLI Library Management Demo in PHP
+
+// Login
+echo "Login:\n";
+$username = readline("Username: ");
+$password = readline("Password: ");
+
+if ($username !== "admin" || $password !== "1234") {
+    echo "Invalid login! Exiting.\n";
+    exit;
+}
+echo "Login successful!\n\n";
+
+// Add Book
+echo "Add Book:\n";
+$title = readline("Book Title: ");
+$author = readline("Author: ");
+$isbn = readline("ISBN: ");
+$year = readline("Publication Year: ");
+
+echo "Book added: $title by $author (ISBN: $isbn, Year: $year)\n\n";
+
+// Make Fine
+echo "Make Fine:\n";
+$student = readline("Student Name: ");
+$amount = readline("Fine Amount: ");
+$reason = readline("Reason: ");
+
+echo "Fine issued: ₹$amount to $student for $reason\n\n";
+
+// Search Book
+echo "Search Book:\n";
+$search = readline("Enter Title or Author: ");
+
+echo "Searching for '$search'... (Demo, no DB connected)\n";
+?>
+
+css
+
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid #2980b9;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
+
+form {
+  background: #fff;
+  padding: 15px 20px;
+  margin-bottom: 30px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #34495e;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #2980b9;
+  outline: none;
+}
+
+input[type="submit"] {
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #1f6391;
+}
+
+.message {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  color: #155724;
+  font-weight: 600;
+}
+
