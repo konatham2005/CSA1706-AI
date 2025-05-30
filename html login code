@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Libarary login</h2>
+  <form action="/login" >
+    <label>username:</label><br>
+    <input type="text" name="username"><br><br><br>
+
+</label>password :</label><br>
+<input type="text" name="password"><br><br>
+<input type="submit" value="login ">
+<h2>Add Book</h2>
+  <form action="/add-book" method="post">
+    <label>Book Title:</label><br>
+    <input type="text" name="title"><br><br>
+
+    <label>Author:</label><br>
+    <input type="text" name="author"><br><br>
+
+    <label>ISBN:</label><br>
+    <input type="text" name="isbn"><br><br>
+
+    <label>Publication Year:</label><br>
+    <input type="text" name="year"><br><br>
+
+    <input type="submit" value="Add Book">
+
+    <h2>upadte</h2>
+    <form action="/update" method="post">
+      <label>update book:</label> <br><br>
+      <input type="text" name="update"><br><br>
+      <input type="button" value="update">
+      
+    </form>
+  </form>
+  <h2>Make Fine</h2>
+  <form action="/make-fine" method="post">
+    <label>Student Name:</label><br>
+    <input type="text" name="student"><br><br>
+
+    <label>Amount:</label><br>
+    <input type="text" name="amount"><br><br>
+
+    <label>Reason:</label><br>
+    <input type="text" name="reason"><br><br>
+
+    <input type="submit" value="Make Fine">
+  </form>
+  
+</body>
+</html>
